@@ -1,0 +1,24 @@
+{
+	"name": "henrique/mvc-php-composer",
+	"description": "Curso de MVC com Composer no PHP",
+	"license": "proprietary",
+	"autoload": {
+		"psr-4": {
+			"app\\": "app/",
+			"core\\": "core"
+		},
+		"files": [
+			"config/config.php"
+		]
+	},
+	"authors": [
+		{
+			"name": "Henrique Junqueira",
+			"email": "henriquejunqueira94@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=7.2"
+	}
+}
