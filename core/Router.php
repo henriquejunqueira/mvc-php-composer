@@ -2,8 +2,13 @@
 
 namespace core;
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 class Router
 {
+
 
   private $controller = 'Site'; // * armazena o nome da classe principal
   private $method = 'home'; // * armazena o nome da página que o usuário quer acessar
@@ -22,10 +27,10 @@ class Router
 
     if(isset($router[1]) and method_exists($class, $router[1])):
       $this->method = $router[1];
-      unset($router[1]);
+      unset($router[1]); // * limpa o router
     endif;
 
-    $this->param = $router ? array_values($router) : [];
+    $this->param = $router ? array_values($router): [];
 
     call_user_func_array([$object, $this->method], $this->param);
   }
